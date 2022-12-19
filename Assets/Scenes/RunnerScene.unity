@@ -7863,6 +7863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa0535ac5ea0f94fa9dcad66f72317d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStatsComponent: {fileID: 1743427440}
 --- !u!114 &1743427438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7875,6 +7876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af4aa73697673d4ba0d1da178e126da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStatsComponent: {fileID: 1743427440}
 --- !u!54 &1743427439
 Rigidbody:
   m_ObjectHideFlags: 0

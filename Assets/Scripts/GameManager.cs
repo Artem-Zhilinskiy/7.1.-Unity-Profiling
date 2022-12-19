@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace Runner
 {
@@ -24,20 +25,27 @@ namespace Runner
 
         public static GameManager Self { get; private set; }
 
-
+        private void Start()
+        {
+            StartCoroutine(ControlFallDamage());
+        }
 
         void Awake()
         {
             Self = this;
         }
 
-		private void Update()
-		{
-            Debug.Log("Game Manager Update");
-            if (_player.position.y <= -1f) SetDamage();
+        private IEnumerator ControlFallDamage()
+        {
+            while (_player.position.y <= -1f)
+            {
+                SetDamage();
+            }
+            yield return null;
         }
 
-		public void SetDamage()
+
+        public void SetDamage()
         {
             Health -= 1;
 

@@ -6,6 +6,9 @@ namespace Runner
     [RequireComponent(typeof(Rigidbody), typeof(PlayerStatsComponent))]
     public abstract class BasePlayerController : MonoBehaviour
     {
+        [SerializeField]
+        protected PlayerStatsComponent _playerStatsComponent;
+
         protected virtual void Start()
         {
             StartCoroutine(MoveForward());
@@ -20,7 +23,8 @@ namespace Runner
         {
             while(true)
             {
-                transform.position += transform.forward * GetComponent<PlayerStatsComponent>().ForwardSpeed * Time.deltaTime;
+                //transform.position += transform.forward * GetComponent<PlayerStatsComponent>().ForwardSpeed * Time.deltaTime;
+                transform.position += transform.forward * _playerStatsComponent.ForwardSpeed * Time.deltaTime;
                 yield return null;
 			}
 		}

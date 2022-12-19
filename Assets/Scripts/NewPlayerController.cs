@@ -5,6 +5,8 @@ namespace Runner
     public class NewPlayerController : BasePlayerController
     {
         private RunnerControls _controls;
+		float direction;
+
 
 		protected override void Start()
         {
@@ -13,7 +15,7 @@ namespace Runner
 
 		private void Update()
 		{
-			var direction = _controls.Player.Move.ReadValue<float>() * GetComponent<PlayerStatsComponent>().SideSpeed * Time.deltaTime;
+			direction = _controls.Player.Move.ReadValue<float>() * _playerStatsComponent.SideSpeed * Time.deltaTime;
 
 			if (direction == 0f) return;
 			transform.position += direction * transform.right;
